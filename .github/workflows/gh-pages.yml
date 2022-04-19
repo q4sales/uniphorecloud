@@ -1,0 +1,22 @@
+name: Build gh-pages
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Create 404 gh-pages
+        run: cp ./public/index.html ./public/404.html
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          keep_files: false
+          allow_empty_commit: true
+          cname: uniphorecloud.com

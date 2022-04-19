@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="application/javascript">
+      const host = window.location.hostname;
+      if (host.indexOf('uniphorecloud.com') >= 0) {
+        window.location.replace(
+          document.location.href.replace(host, 'uniphore.com')
+        );
+      }
+    </script>
+  </head>
+  <body style="margin-top: 10vh; text-align: center">
+    <h1>
+      You should be redirected to uniphore.com shortly. If not, please click
+      <a href="uniphore.com">here.</a>
+    </h1>
+  </body>
+</html>
