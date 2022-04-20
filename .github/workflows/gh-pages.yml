@@ -19,4 +19,4 @@ jobs:
           publish_dir: ./public
           keep_files: false
           allow_empty_commit: true
-          cname: uniphorecloud.com
+          # cname: uniphorecloud.com
