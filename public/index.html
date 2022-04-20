@@ -1,19 +1,43 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <script type="application/javascript">
-      const host = window.location.hostname;
-      if (host.indexOf('uniphorecloud.com') >= 0) {
-        window.location.replace(
-          document.location.href.replace(host, 'uniphore.com')
-        );
+
+<head>
+  <meta charset="UTF-8" />
+  <script type="application/javascript" src="script.js"></script>
+  <style>
+    .lds-dual-ring {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+    }
+
+    .lds-dual-ring:after {
+      content: " ";
+      display: block;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      border: 6px solid #fdd;
+      border-color: #fdd transparent #fdd transparent;
+      animation: lds-dual-ring 1.2s linear infinite;
+    }
+
+    @keyframes lds-dual-ring {
+      0% {
+        transform: rotate(0deg);
       }
-    </script>
-  </head>
-  <body style="margin-top: 10vh; text-align: center">
-    <h1>
-      You should be redirected to uniphore.com shortly. If not, please click
-      <a href="uniphore.com">here.</a>
-    </h1>
-  </body>
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body style="margin-top: 10vh; text-align: center">
+  <div class="lds-dual-ring"></div>
+  <iframe id="iframe001"
+    style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+</body>
+
 </html>
